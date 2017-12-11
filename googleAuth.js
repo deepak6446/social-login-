@@ -46,6 +46,7 @@ var auth = {
                         res.send("Error getting permissions")
                         res.end()
                     }else {
+                        //store user session 
                         //here response contains all data received by gmail line firstname, lastname, gmailId, fullName etc.
                         //you can create session for user and redirect it to home page
                         res.redirect('/')
