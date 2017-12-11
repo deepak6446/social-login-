@@ -1,3 +1,14 @@
+//---------------- config/auth.js ----------------------------------------
+module.exports = {
+
+    'googleAuth' : {
+        'clientID'      : 'client-id',
+        'clientSecret'  : 'clientsecter key ',
+        'callbackURL'   : 'http://localhost:8000/auth/google/callback'
+    }
+
+};
+
 //------------------------------------ index.js ----------------------------------------
 //redirect user to /auth/google when user clicks login with google
 router.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
@@ -78,14 +89,3 @@ authGoogle: function(req, res) {
 		req.session.role = 'user'
         res.redirect("/home");
 },
-
-//---------------- config/auth.js ----------------------------------------
-module.exports = {
-
-    'googleAuth' : {
-        'clientID'      : 'client-id',
-        'clientSecret'  : 'clientsecter key ',
-        'callbackURL'   : 'http://localhost:8000/auth/google/callback'
-    }
-
-};
